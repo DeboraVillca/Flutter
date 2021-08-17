@@ -46,13 +46,35 @@ class _loginState extends State<login> {
                 psswrd = pass.text;
                 print(usr + " " + psswrd);
                 if (usr == '' && psswrd == '') {
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('PRIMERA APP'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: [Text('Verificar tus datos')],
+                          ),
+                        ),
+                        actions: [
+                          FlatButton(
+                            child: Text('Aceptar'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      );
+                    },
+                  );
                 } else {}
                 user.text = '';
                 pass.text = '';
               },
               child: Text(
                 'Ingresar',
-                style: TextStyle(fontSize: 18, color: Colors.grey),
+                style: TextStyle(fontSize: 20, color: Colors.grey),
               ),
             ),
           ),
