@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/bienvenida.dart';
 
+// ignore: camel_case_types
 class login extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
 }
 
+// ignore: camel_case_types
 class _loginState extends State<login> {
   final user = TextEditingController();
   final pass = TextEditingController();
@@ -58,7 +61,7 @@ class _loginState extends State<login> {
                           ),
                         ),
                         actions: [
-                          FlatButton(
+                          TextButton(
                             child: Text('Aceptar'),
                             onPressed: () {
                               Navigator.of(context).pop();
@@ -68,7 +71,12 @@ class _loginState extends State<login> {
                       );
                     },
                   );
-                } else {}
+                } else {
+                  Navigator.of(context).push(
+                      MaterialPageRoute<Null>(builder: (BuildContext context) {
+                    return new Bienvenida();
+                  }));
+                }
                 user.text = '';
                 pass.text = '';
               },
