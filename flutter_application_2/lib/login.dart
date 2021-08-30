@@ -54,7 +54,7 @@ class _loginState extends State<login> {
                     barrierDismissible: false,
                     builder: (context) {
                       return AlertDialog(
-                        title: Text('PRIMERA APP'),
+                        title: Text('ATENCIÓN'),
                         content: SingleChildScrollView(
                           child: ListBody(
                             children: [Text('Verificar tus datos')],
