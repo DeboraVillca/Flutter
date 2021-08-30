@@ -47,6 +47,7 @@ class _loginState extends State<login> {
               onPressed: () {
                 usr = user.text;
                 psswrd = pass.text;
+
                 print(usr + " " + psswrd);
                 if (usr == '' && psswrd == '') {
                   showDialog(
@@ -72,10 +73,10 @@ class _loginState extends State<login> {
                     },
                   );
                 } else {
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute<Null>(builder: (BuildContext context) {
-                    return new Bienvenida();
-                  }));
+                    return new Bienvenida(usr);
+                  }), (route) => false);
                 }
                 user.text = '';
                 pass.text = '';

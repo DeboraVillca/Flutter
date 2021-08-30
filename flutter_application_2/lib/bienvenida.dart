@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Bienvenida extends StatefulWidget {
+  String usr;
+  Bienvenida(this.usr);
+
   _BienvenidaState createState() => _BienvenidaState();
 }
 
@@ -15,7 +18,7 @@ class _BienvenidaState extends State<Bienvenida> {
         children: [
           Container(
             child: Text(
-              'Bienvenido',
+              'Bienvenid@ ' + widget.usr,
               style: TextStyle(fontSize: 20),
             ),
           )
