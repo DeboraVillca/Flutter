@@ -50,7 +50,7 @@ class _loginState extends State<login> {
 
                 print(usr + " " + psswrd);
 
-                if (usr == '' && psswrd == '') {
+                if (usr == '' || psswrd == '') {
                   showDialog(
                     context: context,
                     barrierDismissible: false,
