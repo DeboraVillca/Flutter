@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/bienvenida.dart';
 
-// ignore: camel_case_types
 class login extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
@@ -11,6 +10,7 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   final user = TextEditingController();
   final pass = TextEditingController();
+  //variables to save what income
   String usr = '';
   String psswrd = '';
 
@@ -27,7 +27,7 @@ class _loginState extends State<login> {
             padding: EdgeInsets.all(15),
             child: TextField(
               controller: user,
-              decoration: InputDecoration(hintText: "User"),
+              decoration: InputDecoration(hintText: "user"),
             ),
           ),
           Container(
@@ -49,6 +49,7 @@ class _loginState extends State<login> {
                 psswrd = pass.text;
 
                 print(usr + " " + psswrd);
+
                 if (usr == '' && psswrd == '') {
                   showDialog(
                     context: context,
@@ -73,10 +74,8 @@ class _loginState extends State<login> {
                     },
                   );
                 } else {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute<Null>(builder: (BuildContext context) {
-                    return new Bienvenida(usr);
-                  }), (route) => false);
+                  Navigator.pushNamed(context, '/bienvenida',
+                      arguments: {'user': usr, 'password': psswrd});
                 }
                 user.text = '';
                 pass.text = '';
