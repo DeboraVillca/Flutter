@@ -37,6 +37,11 @@ class _MenuState extends State<Menu> {
             leading: Icon(Icons.hardware),
             onTap: () {},
           ),
+          ListTile(
+            title: Text('salir'),
+            leading: Icon(Icons.exit_to_app_rounded),
+            onTap: () {},
+          ),
         ],
       ),
     );
