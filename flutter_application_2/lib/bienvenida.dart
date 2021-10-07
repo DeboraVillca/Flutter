@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/perfil.dart';
+
 import 'package:flutter_application_2/menu.dart';
 
 class Bienvenida extends StatefulWidget {
